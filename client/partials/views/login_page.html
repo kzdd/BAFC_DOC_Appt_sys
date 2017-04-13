@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="twelve columns">
+		<h4>Welcome! Please filling one of the following sections:</h4>
+		<p>New Patient, Please enter your name and schedule an appointment!</p>
+		<form>
+			<input type="text" ng-model="newUser.name"></input>
+			<button class="button-primary" ng-click="addUser()">Register</button>
+		</form>
+	</div>
+	<div ng-if="error" style="color:red">
+			{{error}}
+	</div>
+</div>
+<div class="row">
+	<h6>Or,</h6>
+</div>
+<div class="row">
+	<div class="twelve columns">
+		<p>Returning Patient, Please sign in</p>
+		<form>
+			<input type="text" ng-model="oldUser.name"></input>
+			<button class="button-primary" ng-click="login(oldUser.name)">Login</button>
+		</form>
+		<div ng-if="no_user" style="color:red">
+			{{no_user}}
+		</div>
+	</div>
+</div>

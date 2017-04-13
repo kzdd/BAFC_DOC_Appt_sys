@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="eight columns">
+		<h2>New Appointment</h2>
+		<form>
+			<label>Date:</label>
+			<input type="date" ng-model="newAppt.date"></input>
+			<label>Time:</label>
+			<select ng-model="newAppt.time">
+				<option>8:00 AM</option>
+				<option>9:00 AM</option>
+				<option>10:00 AM</option>
+				<option>11:00 AM</option>
+				<option>12:00 PM</option>
+				<option>1:00 PM</option>
+				<option>2:00 PM</option>
+				<option>3:00 PM</option>
+				<option>4:00 PM</option>
+				<option>5:00 PM</option>
+			</select>
+			<label>Complain:</label>
+			<textarea rows="20" cols="40" ng-model="newAppt.complain"></textarea>
+			<a href="#/dashboard"><button>Cancel</button></a>
+			<button class="button-primary" ng-click="createAppointment(newAppt)">Add Appointment</button>
+		</form>
+	</div>
+</div>
+<div ng-if="error" style="color:red">
+	{{error}}
+</div>
+<div ng-if="errors" style="color:red">
+	
+	<div ng-repeat="err in errors">
+		<div ng-bind="err.complain"></div>
+		<div ng-bind="err.time"></div>
+		<div ng-bind="err.date"></div>
+	</div>
+
+</div>
+<div ng-if="cannot">
+	{{cannot}}
+</div>
